@@ -1,0 +1,184 @@
+.simpleColorContainer {
+	position: relative;
+}
+
+.simpleColorDisplay {
+	position: absolute;
+	margin-left: 236px;
+	bottom: 50px;
+	right: -23px;
+}
+
+.discard-zone{
+	text-align: center;
+	color: #999999;
+	margin-left: 760px;
+	border: dotted 1px;
+	width: 140px;
+	height: 30px;
+	margin-top: -40px;
+}
+
+.search {
+	margin-top: 5px;
+	width: 400px;
+} 
+
+.navbar {
+	z-index: 1000;
+}
+
+.navbar .brand {
+	margin-left: -10px;
+}
+
+.navbar .btn{
+	margin-right: 10px;	
+}
+
+.sticky-note {
+	position: absolute;
+	height: 100px;
+	width: 230px;
+}
+
+.comment {
+	resize: none;
+}
+
+.sticky-note .title {
+	background: transparent;
+	border: none;
+	display: block;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.sticky-note .body {
+	background: transparent;
+	border: none;
+	display: block;
+	font-size: 10px;
+}
+
+.votes {
+	background: #BDFCC9;
+	height: 21px;
+	width: 21px;
+	-webkit-border-radius: 20px;
+	border-radius : 20px;
+	color: black;
+	z-index: 2;
+	float: left;
+	margin-left: -23px;
+	margin-top: -64px;
+	text-align: center;
+	border-style:solid;
+	border-width: 0.5px;
+	font-family: Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.vote {
+	float: right;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 20px;
+	color: #000;
+	text-shadow: 0 1px 0 #fff;
+	opacity: .2;
+	filter: alpha(opacity = 20);
+	position: relative;
+	float: right;
+	margin-right: -24px;
+	margin-top: 15px;
+}
+
+button.vote {
+	padding: 0;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	-webkit-appearance: none;
+}
+
+.vote:hover {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+	opacity: .4;
+	filter: alpha(opacity=40);
+}
+
+.vote-down {
+	margin-top: 30px;
+	margin-right: -17px;
+}
+
+.boards {
+	display: none;
+}
+
+.boards-visible {
+	display: block;
+	color: white;
+}
+
+.elements-visible {
+	display: block;
+	position: absolute;
+	margin-top: 50px;
+	margin-left: 10px;
+	-webkit-border-radius: 3px;
+	border-radius : 3px;
+	width: 100px;
+	overflow: auto;
+	overflow-x: auto;
+	overflow-y: auto;
+	opacity: .8;
+	filter: alpha(opacity=40);
+	color: black;
+	background: #B8B8B8;
+	width: 496px;
+}
+
+.btn-create-boards {
+	float: right;
+	margin-bottom: 3px;
+}
+
+.board-selected {
+	color: green;
+	opacity: 0.8;
+}
+
+.details {
+	display: none;
+}
+
+.details-visible {
+	display: inline-block;
+	min-height: 130px;
+	min-width: 200px;
+	background-color: #B8B8B8;
+	z-index: 1000;
+	margin-top: -100px;
+	font-size: 25px;
+	float: right;
+	border-radius: 5px;
+	position: relative;
+	color: #555555;
+	opacity: 0.95;
+	font: font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.details-text {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.image-attached {
+	display: block;
+	margin-left: auto;
+	margin-right: auto
+}

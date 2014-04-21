@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+	<title>Leinen Charts</title>
+	<link rel="stylesheet" href="/css/bootstrap.css">
+	<link rel="stylesheet" href="/css/app.css">
+	<link rel="stylesheet" href="css/graph.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src="js/jquery.flot.min.js"></script>
+	<script src="js/jquery.flot.time.js"></script>
+	<script src="js/chart.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+</head>
+<script>
+	$(document).ready(function () {
+	
+		  var socket = io.connect();
+		  socket.on('createdNotes', function (data) {
+			  new Chart().build(data);
+		  });
+	});
+</script>
+<body>
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<a class="brand" href="/home">Leinen Board</a>
+		</div>
+	</div>
+
+	<div class="graph-wrapper">
+		<div class="graph-info">
+			<a href="javascript:void(0)" class="good message">GOOD</a> 
+			<a href="javascript:void(0)" class="bad message">BAD</a>
+			<a href="javascript:void(0)" class="suggestion message">SUGGESTION</a>  
+			<a href="#" id="lines" class="active"><span></span></a>
+		</div>
+
+		<div class="graph-container">
+			<div id="graph-lines"></div>
+		</div>
+	</div>
+</body>
+</html>

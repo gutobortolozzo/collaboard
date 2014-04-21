@@ -1,0 +1,28 @@
+<html data-ng-app="app">
+<head>
+<title>Login</title>
+<head>
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/angular-1.0.3.js"></script>
+	<script src="js/controller-login.js"></script>
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+</head>
+<body data-ng-controller="loginCtrl">
+		<div>
+			<h1>Login<span class="login-status">Wrong username or password</span></h1>
+		</div>
+		<p>
+			<label class="control-label">Username</label> 
+			<input type="text" placeholder="Username" data-ng-model="user.username" />
+		</p>
+		<p>
+			<label class="control-label">Password</label> 
+			<input type="password" placeholder="Password" data-ng-model="user.password" /><br />
+		</p>
+		<p>
+			<button type="button" class="btn btn-primary" data-ng-click="login()">Login</button>
+		</p>
+</body>
+</html>

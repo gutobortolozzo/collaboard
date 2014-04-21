@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html data-ng-app="app">
+<head>
+	<title>Collab-board</title>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="js/jquery-1.10.2.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/angular-1.0.3.js"></script>
+	<script src="js/collab-board-notes-controller.js"></script>
+	<script src="js/collab-board-boards-controller.js"></script>
+	<script src="color/jquery.simple-color.js"></script>
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/app.css">
+</head>
+<style>
+body {background: url(images/green-board.jpg) top left repeat fixed;}
+</style>
+<body data-ng-controller="MainCtrl">
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div data-boards-container class="boards-container">
+				<a class="brand" href="">Boards</a>
+				<div data-ng-controller="boardsCtrl" class="boards">
+					<div class="elements-visible">
+						<div data-sticky-board data-ng-repeat="board in boards" data-board="board" class="board-element">
+							<input data-ng-model="board.name" data-ng-change="updateBoard(board)" type="text" class="title">
+							<button class="close" type="button" data-ng-click="deleteBoard(board)">&times;</button>
+							<button class="close" type="button" data-ng-click="select(board, $event)">&#10004;</button>
+						</div>
+					<button data-ng-click="createBoard()" class="btn btn-create-boards">Create Board</button>		
+					</div>
+				</div>
+			</div>
+			<input data-ng-model="lookingFor" type="text" class="search" placeholder="Filter by tittle or comment or date dd/m/yyyy or votes or color">
+			<button id="createButton" data-ng-click="createNote()" class="btn btn-info pull-right">Create Note</button>
+		</div>
+	</div>
+	<div data-sticky-note data-ng-repeat="note in notes | filterByAttributes:lookingFor | filter:boardsFilter" 
+		 data-note="note" class="alert alert-block sticky-note" data-ondelete="deleteNote(id)"
+		 data-imagedrop data-on-image-drop="imageDropped()">
+		<button type="button" class="close" data-ng-click="deleteNote(note.id)">&times;</button>
+		<input data-ng-model="note.title" data-ng-change="updateNote(note)" type="text" class="title" >
+		<div class="votes" data-ng-model="note.votes">{{note.votes}}</div>
+		<button type="button" class="vote" data-ng-click="voteUp(note)">&#10004;</button>
+		<button type="button" class="vote vote-down" data-ng-click="voteDown(note)">&#45;</button>
+		<textarea data-ng-model="note.body" data-ng-change="updateNote(note)" class="body comment">{{note.body}}</textarea>
+		<input class='color-box' value='#cc3333'/>
+		<div class="details">
+			<div class="details-text">{{note.title}}</div>
+			<div class="details-text">{{note.body}}</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "collab-board",
+  "description": "Collaboration Board",
+  "version": "1.0.0",
+  "private": false,
+  "dependencies": {
+    "express": "3.x",
+    "socket.io": "0.9.x",
+    "mongodb": "*",
+    "monk": "*",
+    "redis": "*"
+  },
+  "subdomain": "board",
+  "scripts": {
+    "start": "app.js"
+  },
+  "engines": {
+    "node": "0.10.24"
+  },
+  "devDependencies": {
+    "should": "~3.1.2",
+    "mocha": "1.17.1"
+  }
+}
